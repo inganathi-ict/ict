@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("8Z6FiU9jb1alXuVeo");
+})();
+</script>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,12 +76,35 @@
 <section id="contact">
     <div class="container">
         <h2>Contact Us</h2>
-        <form action="/ict/sendmail.php" method="POST">
+        <form id="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" email="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
+        <script>
+
+document.getElementById("contact-form").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+emailjs.sendForm(
+"service_l9q3vhf",
+"template_ukf6vcb",
+this
+).then(function(){
+
+alert("Message sent successfully!");
+
+}, function(error){
+
+alert("Failed to send message");
+
+});
+
+});
+
+</script>
     </div>
 </section>
 
