@@ -78,6 +78,12 @@ nav a {
     border-radius: 10px;
 }
 
+#portfolio {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
 #about {
     background: #f9f9f9;
     padding: 60px 0;
