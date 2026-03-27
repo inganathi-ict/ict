@@ -70,9 +70,71 @@
 <section id="portfolio">
     <div class="container">
         <h2>Recent projects</h2>
-        <p>Inganathi ICT Solutions</p>
+            <div class="slideshow-container">
+
+                <div class="slide fade">
+                    <img src="cam1.jpeg" alt="Slide 1">
+                </div>
+
+                <div class="slide fade">
+                    <img src="cam2.jpeg" alt="Slide 2">
+                </div>
+
+                <div class="slide fade">
+                    <img src="cam3.jpeg" alt="Slide 3">
+                </div>
+
+                <div class="slide fade">
+                    <img src="cam4.jpeg" alt="Slide 4">
+                </div>
+
+                <div class="slide fade">
+                    <img src="cam5.jpeg" alt="Slide 5">
+                </div>
+                
+                <!-- Navigation buttons -->
+                <button class="prev" onclick="changeSlide(-1)">❮</button>
+                <button class="next" onclick="changeSlide(1)">❯</button>
+
+            </div>
     </div>
 </section>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+// Auto slideshow
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  slides[slideIndex - 1].style.display = "block";
+  
+  setTimeout(showSlides, 3000); // Change every 3 seconds
+}
+
+// Manual controls
+function changeSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+
+  slideIndex += n;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  if (slideIndex < 1) { slideIndex = slides.length }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+}
+</script>
 
 <section id="about">
     <div class="container">
