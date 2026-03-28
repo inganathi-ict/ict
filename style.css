@@ -173,3 +173,27 @@ footer {
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.8);
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* THIS centers the icons horizontally */
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background: #333;
+  padding: 10px;
+  border-radius: 30%;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #0077b5; /* Change color on hover */
+  transform: scale(1.1);
+}
