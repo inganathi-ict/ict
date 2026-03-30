@@ -189,9 +189,29 @@ function changeSlide(n) {
             <input type="date" name="appointment_date" id="appointment_date" required>
             <button type="submit">Submit</button>
         </form>
-        <p id="successMsg" style="display:none; color:green;">
-            Appointment booked successfully!
-        </p>
+<script>
+                
+                document.getElementById("bookingForm").addEventListener("submit", function(event){
+                
+                event.preventDefault();
+                
+                emailjs.sendForm(
+                "service_l9q3vhf",
+                "template_6srsgpa",
+                this
+                ).then(function(){
+                
+                alert("Appointment booked successfully!");
+                
+                }, function(error){
+                
+                alert("Failed to book appointment, Please try again");
+                
+                });
+                
+                });
+                
+                </script>
   </div>
 </section>
 
@@ -208,20 +228,6 @@ function showForm(form) {
 }
 </script>
 
-<script>
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  emailjs.sendForm("service_l9q3vhf","template_6srsgpa", this)
-    .then(function() {
-      document.getElementById("successMsg").style.display = "block";
-      document.getElementById("bookingForm").reset();
-    }, function(error) {
-      alert("Failed to send booking. Try again.");
-      console.log(error);
-    });
-});
-</script>
 
 <footer>
     <p>© 2026 Inganathi ICT Solutions | All Rights Reserved</p>
