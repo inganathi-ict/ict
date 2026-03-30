@@ -36,6 +36,11 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    transition: 0.3s; 
+}
+
+nav a:hover {
+    color: #ff6600;         /* Hover color (change this to anything you like) */
 }
 
 .hero {
