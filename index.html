@@ -184,9 +184,9 @@ function changeSlide(n) {
     <div class="container">
      <h2>Book Appointment</h2>
         <form id="bookingForm">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="date">
+            <input type="text" name="user_name" placeholder="Name" required>
+            <input type="email" name="user_email" placeholder="Email" required>
+            <input type="date" name="appointment_date" required>
             <button type="submit">Submit</button>
         </form>
         <p id="successMsg" style="display:none; color:green;">
