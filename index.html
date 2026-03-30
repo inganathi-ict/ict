@@ -40,7 +40,8 @@
     <div class="container">
         <h2>“Reliable Networks. Visible Security”</h2>
         <p>Professional IT Support, Networking, CCTV & Cybersecurity Services</p>
-        <a href="#contact" class="btn">Get a Free Quote</a>
+        <a href="#contact" class="btn" onclick="showForm('contact')">Get a Free Quote</a>
+        <a href="#book" class="btn" onclick="showForm('booking')">Schedule Appointment</a>
     </div>
 </section>
 
@@ -62,7 +63,7 @@
             </div>
             <div class="card">
                 <h3>Web Development</h3>
-                <p>Web & Mobile App Development, eCommerce Development, Database design & Management</p>
+                <p>Firewalls, Endpoint protection and Data backups.</p>
             </div>
         </div>
     </div>
@@ -179,6 +180,48 @@ function changeSlide(n) {
                             
     </div>
 </section>
+<section id="book"style="display:none;">
+    <div class="container">
+     <h2>Book Appointment</h2>
+        <form id="bookingForm">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="date">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="successMsg" style="display:none; color:green;">
+            Appointment booked successfully!
+        </p>
+  </div>
+</section>
+
+<script>
+function showForm(form) {
+  document.getElementById("contact").style.display = "none";
+  document.getElementById("book").style.display = "none";
+
+  if (form === "contact") {
+    document.getElementById("contact").style.display = "block";
+  } else {
+    document.getElementById("book").style.display = "block";
+  }
+}
+</script>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_l9q3vhf","template_ukf6vcb", this)
+    .then(function() {
+      document.getElementById("successMsg").style.display = "block";
+      document.getElementById("bookingForm").reset();
+    }, function(error) {
+      alert("Failed to send booking. Try again.");
+      console.log(error);
+    });
+});
+</script>
 
 <footer>
     <p>© 2026 Inganathi ICT Solutions | All Rights Reserved</p>
