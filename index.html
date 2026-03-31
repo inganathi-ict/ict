@@ -32,21 +32,9 @@
             <a href="#about">About Us</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
-            <div class="menu-toggle" id="menu-toggle">
-            ☰
-            </div>
         </nav>
-      
     </div>
 
-<script>
-const toggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
 
 </header>
 
@@ -253,7 +241,30 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
             <i class="fab fa-linkedin-in"></i>
         </a>
 </div>
-</footer>
 
+  <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">
+    &#8593; <!-- Up arrow icon -->
+  </button>
+
+</footer>
+<script>
+// Get the button
+let mybutton = document.getElementById("scrollUpBtn");
+
+// Show button when user scrolls down 200px from the top
+window.onscroll = function() {
+  if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+};
+
+// Scroll to the top of the document
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+</script>
 </body>
 </html>
