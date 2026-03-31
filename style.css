@@ -18,7 +18,10 @@ body {
 header {
     background: #111;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
 }
 
 header h1 {
@@ -28,19 +31,31 @@ header h1 {
 nav {
     float: right;
     font-size:20px;
-    top: -5px;
+    top: -25px;
     position: relative;
+     display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 nav a {
-    color: white;
+    display: inline-block;       /* Makes it behave like a block */
+    padding: 5px 10px;          /* Creates the "block" feel */
     text-decoration: none;
-    margin-left: 20px;
+    color: #ffffff;                 /* Adjust to your theme */
+    border-radius: 6px;  
     transition: 0.3s; 
 }
 
 nav a:hover {
-    color: #ff6600;         /* Hover color (change this to anything you like) */
+     background-color: #e0e0e0;        /* Hover color (change this to anything you like) */
+}
+
+.menu-toggle {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: 50px;
 }
 
 .hero {
@@ -207,3 +222,4 @@ footer {
   background: #0077b5; /* Change color on hover */
   transform: scale(1.1);
 }
+
