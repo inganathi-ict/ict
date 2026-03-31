@@ -32,8 +32,22 @@
             <a href="#about">About Us</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
+            <div class="menu-toggle" id="menu-toggle">
+            ☰
+            </div>
         </nav>
+      
     </div>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
 </header>
 
 <section id="home" class="hero">
@@ -184,9 +198,9 @@ function changeSlide(n) {
     <div class="container">
      <h2>Book Appointment</h2>
         <form id="bookingForm">
-            <input type="text" name="user_name" id="user_name" placeholder="Name" required>
-            <input type="email" name="user_email" id="user_email" placeholder="Email" required>
-            <input type="date" name="appointment_date" id="appointment_date" required>
+            <input type="text" name="user_name" placeholder="Name" required>
+            <input type="email" name="user_email" placeholder="Email" required>
+            <input type="date" name="appointment_date" required>
             <button type="submit">Submit</button>
         </form>
         <p id="successMsg" style="display:none; color:green;">
@@ -212,7 +226,7 @@ function showForm(form) {
 document.getElementById("bookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  emailjs.sendForm("service_l9q3vhf","template_6srsgpa", this)
+  emailjs.sendForm("service_l9q3vhf","template_ukf6vcb", this)
     .then(function() {
       document.getElementById("successMsg").style.display = "block";
       document.getElementById("bookingForm").reset();
