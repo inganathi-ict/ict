@@ -1,270 +1,170 @@
 <!DOCTYPE html>
-
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("8Z6FiU9Jb1aIXuVeo");
-   })();
-</script>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Inganathi ICT Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteveM Group</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
 <header>
-    <div class="container">
-        <div class="logo">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L4 6V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V6L12 2Z" 
-              stroke="white" stroke-width="2" fill="none"/>
-    </svg>
-    <span>Inganathi <strong>ICT Solutions</strong></span>
-</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About Us</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<div class="header-container">
+    <div class="logo-title">
+        <img src="logo.jpeg" alt="Company Logo">
+        
     </div>
 
+    <div class="center">
+      <nav>
+          <ul>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="#pick">Request a Pickup</a>
+              <a href="#track">Track a Parcel</a>
+          </ul>
+      </nav>
+   </div>
 
+    <div class="auth-buttons">
+        <a href="#" class="login">Login</a>
+        <a href="#" class="register">Register</a>
+    </div>
+
+  </div>
 </header>
 
-<section id="home" class="hero">
-    <div class="container">
-        <h2>“Reliable Networks. Visible Security. Smart Web Design”</h2>
-        <p>Professional IT Support, Networking, CCTV & Cybersecurity Services</p>
-        <a href="#contact" class="btn" onclick="showForm('contact')">Get a Free Quote</a>
-        <a href="#book" class="btn" onclick="showForm('booking')">Schedule Appointment</a>
+<section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Your Cargo, Our Care</h1>
+      <p>Shipping by land, sea, and air — delivering your business forward.</p>
+      <a href="#services" class="btn">Our Services</a>
     </div>
-</section>
-
-<section id="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="card">
-                <h3>IT Support</h3>
-                <p>MS Office, PC upgrades, Data Recovery, Virus removal.</p>
-            </div>
-            <div class="card">
-                <h3>Network Installation</h3>
-                <p>Structured cabling, Routers, Switches and WiFi setup.</p>
-            </div>
-            <div class="card">
-                <h3>CCTV Installation</h3>
-                <p>IP cameras,WiFi cameras, NVR setup and Remote monitoring.</p>
-            </div>
-            <div class="card">
-                <h3>Web Development</h3>
-                <p>Firewalls, Endpoint protection and Data backups.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="portfolio">
-    <div class="container">
-        <h2>Recent projects</h2>
-            <div class="slideshow-container">
-
-                <div class="slide fade">
-                    <img src="cam1.jpeg" alt="Slide 1">
-                </div>
-
-                <div class="slide fade">
-                    <img src="cam2.jpeg" alt="Slide 2">
-                </div>
-
-                <div class="slide fade">
-                    <img src="cam3.jpeg" alt="Slide 3">
-                </div>
-
-                <div class="slide fade">
-                    <img src="cam4.jpeg" alt="Slide 4">
-                </div>
-
-                <div class="slide fade">
-                    <img src="cam5.jpeg" style="width: 500px; height: 550px;" alt="Slide 5">
-                </div>
-                
-                <!-- Navigation buttons -->
-                <button class="prev" onclick="changeSlide(-1)">❮</button>
-                <button class="next" onclick="changeSlide(1)">❯</button>
-
-            </div>
-    </div>
-</section>
-
-<script>
-let slideIndex = 0;
-showSlides();
-
-// Auto slideshow
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
-  
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-
-  slides[slideIndex - 1].style.display = "block";
-  
-  setTimeout(showSlides, 3000); // Change every 3 seconds
-}
-
-// Manual controls
-function changeSlide(n) {
-  let slides = document.getElementsByClassName("slide");
-
-  slideIndex += n;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-  if (slideIndex < 1) { slideIndex = slides.length }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-}
-</script>
-
-<section id="about">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Inganathi ICT Solutions is a service provider of comprehensive CCTV and IT solutions across Gauteng. Established in 2022, we specialize in the design, installation, and maintenance of advanced CCTV surveillance systems and integrated IT infrastructure for residential, commercial, and industrial clients. </p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-                <script>
-                
-                document.getElementById("contact-form").addEventListener("submit", function(event){
-                
-                event.preventDefault();
-                
-                emailjs.sendForm(
-                "service_l9q3vhf",
-                "template_ukf6vcb",
-                this
-                ).then(function(){
-                
-                alert("Message sent successfully!");
-                
-                }, function(error){
-                
-                alert("Failed to send message");
-                
-                });
-                
-                });
-                
-                </script>
-                            
-    </div>
-</section>
-<section id="book"style="display:none;">
-    <div class="container">
-     <h2>Book Appointment</h2>
-        <form id="bookingForm">
-            <input type="text" name="user_name" placeholder="Name" required>
-            <input type="email" name="user_email" placeholder="Email" required>
-            <input type="date" name="appointment_date" required>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="successMsg" style="display:none; color:green;">
-            Appointment booked successfully!
-        </p>
   </div>
 </section>
 
-<script>
-function showForm(form) {
-  document.getElementById("contact").style.display = "none";
-  document.getElementById("book").style.display = "none";
+<section id="services">
+  <h2>Services</h2>
+    <div class="container">
+        <form id="services-form">
 
-  if (form === "contact") {
-    document.getElementById("contact").style.display = "block";
-  } else {
-    document.getElementById("book").style.display = "block";
-  }
+            <div class="card">
+                <h3>On-Forwarding & Customs Clearing</h3>
+                <p>Seamless on-forwarding of shipments from ports or hubs to final destination.</p>
+                
+                <button type="button" onclick="toggleInfo(this)">Learn More</button>
+
+                  <div class="more-info">
+                    <p>
+                      Full customs clearing services for imports and exports, including documentation, 
+                      tariff classification, SARS compliance, EDI submissions, permits, and regulatory support to minimise delays and ensure smooth clearance.
+                    </p>
+                 </div>
+
+              </div>
+
+            <div class="card">
+                <h3>Air Freight</h3>
+                <p>Fast, reliable domestic and international air freight solutions for time-sensitive and high value cargo.</p>
+               
+                <button type="button" onclick="toggleInfo(this)">Learn More</button>
+
+
+                  <div class="more-info">
+                    <p>
+                      Services include consolidation, next-flight-out options, dedicated charters, door-to-door delivery, and full shipment tracking.
+                      Suitable for general cargo, perishables, and specialised shipments.
+                    </p>
+                  </div>
+
+            </div>
+
+            <div class="card">
+                <h3>Same-Day Deliveries</h3>
+                <p>Prompt same-day collection and delivery service for urgent shipments of any size or weight.</p>
+             
+                <button type="button" onclick="toggleInfo(this)">Learn More</button>
+
+                 <div class="more-info">
+                    <p>
+                        Ideal for critical documents, medical supplies, spare parts, and time-sensitive commercial goods,
+                        with flexible routing and dedicated resources to guarantee speed and reliability
+                    </p>
+                 </div>
+
+              </div>
+
+            <div class="card">
+                <h3>Local Transportation & Distribution</h3>
+                <p>Efficient local & regional road transportation.</p>
+                
+                <button type="button" onclick="toggleInfo(this)">Learn More</button>
+
+                <div class="more-info">
+                    <p>
+                        Including dedicated fleet options, last-mile delivery, point-to-point hauls, and scheduled distribution routes across Gauteng and South Africa.
+                        Focused on reliability, safety, and cost optimisation for retail, manufacturing, and wholesale clients.
+                    </p>
+                </div>
+
+              </div>
+        </form>
+    </div>
+</section>
+
+<script>
+function toggleInfo(button) {
+    const info = button.nextElementSibling;
+
+    if (info.style.display === "block") {
+        info.style.display = "none";
+        button.innerText = "Learn More";
+    } else {
+        info.style.display = "block";
+        button.innerText = "Show Less";
+    }
 }
 </script>
 
-<script>
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  emailjs.sendForm("service_l9q3vhf","template_ukf6vcb", this)
-    .then(function() {
-      document.getElementById("successMsg").style.display = "block";
-      document.getElementById("bookingForm").reset();
-    }, function(error) {
-      alert("Failed to send booking. Try again.");
-      console.log(error);
-    });
-});
-</script>
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-section">
+      <h3>SteveM Group</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
 
-<footer>
-    <p>© 2026 Inganathi ICT Solutions | All Rights Reserved</p>
-    <div class="social-icons">
-        <a href="https://facebook.com/yourprofile" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://twitter.com/yourprofile" target="_blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/inganathi-ict-solutions" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-</div>
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <p>Tel: +27 (0)72 359 6952</p>
+        <p>Email: steve@stevemgroup.co.za</p>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Help Center</a></li>
+      </ul>
+    </div>
 
-  <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">
-    &#8593; <!-- Up arrow icon -->
-  </button>
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
 
+  </div>
+
+     <p>© 2026 SteveM Group | All Rights Reserved</p>
 </footer>
-<script>
-// Get the button
-let mybutton = document.getElementById("scrollUpBtn");
 
-// Show button when user scrolls down 200px from the top
-window.onscroll = function() {
-  if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-};
-
-// Scroll to the top of the document
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-</script>
 </body>
+
 </html>
