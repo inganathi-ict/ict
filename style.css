@@ -90,6 +90,38 @@ nav a:hover {
     background: #f4f4f4;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Bottom Accent Line */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: #1da1c2;
+  transition: width 0.3s ease;
+}
+
+.card:hover::after {
+  width: 100%;
+}
+
+/* Text transition (smooth color change if needed later) */
+.card h3,
+.card p {
+  transition: color 0.3s ease;
 }
 
 #portfolio {
