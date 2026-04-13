@@ -74,6 +74,10 @@ nav a:hover {
     border-radius: 5px;
 }
 
+.btn:hover{
+    text-decoration: underline;
+}
+
 #services {
     padding: 60px 0;
     text-align: center;
