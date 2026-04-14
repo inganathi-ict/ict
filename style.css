@@ -273,6 +273,14 @@ html {
   font-size: 18px;
 }
 
+.container button{
+    color: black;
+    font-size: large;
+}
+.container button:hover{
+    text-decoration: underline;
+}
+
 #scrollUpBtn:hover {
   background-color: #555;
 }
