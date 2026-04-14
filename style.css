@@ -9,6 +9,14 @@ body {
     line-height: 1.6;
 }
 
+.head-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;
+    padding: 15px 40px;
+}
+
 .container {
     width: 90%;
     margin: auto;
@@ -18,7 +26,7 @@ body {
 header {
     background: #111;
     color: white;
-    padding: 15px 0;
+    padding: 0px 0;
     position: sticky;
     top: 0;
     z-index: 1000; 
@@ -29,13 +37,8 @@ header h1 {
 }
 
 nav {
-    float: right;
-    font-size:20px;
-    top: -25px;
-    position: relative;
-     display: flex;
-    align-items: center;
-    gap: 15px;
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
@@ -173,8 +176,9 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 22px;
-    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .logo strong {
@@ -273,14 +277,14 @@ html {
   font-size: 18px;
 }
 
+#scrollUpBtn:hover {
+  background-color: #555;
+}
+
 .container button{
     color: black;
     font-size: large;
 }
 .container button:hover{
     text-decoration: underline;
-}
-
-#scrollUpBtn:hover {
-  background-color: #555;
 }
